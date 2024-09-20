@@ -1,0 +1,46 @@
+/* Estilo general del header */
+header {
+    background-color: #333;
+    padding: 10px 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;  /* Centrar los enlaces horizontalmente */
+    align-items: center;
+    height: 80px;             /* Altura fija del header */
+  }
+  
+  /* Estilo de los enlaces del menú */
+  nav ul {
+    list-style: none;          /* Eliminar los puntos de la lista */
+    display: flex;             /* Mostrar los ítems en línea */
+    justify-content: center;   /* Centrar los enlaces dentro del nav */
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    margin: 0 15px;            /* Espacio entre los enlaces */
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #f39c12;           /* Cambia de color al pasar el mouse */
+  }
+  
+  /* Estilo responsivo para pantallas pequeñas */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;   /* Cambia la disposición del menú a vertical */
+    }
+    nav ul li {
+      margin: 10px 0;
+    }
+  }
