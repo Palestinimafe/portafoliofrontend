@@ -5,6 +5,10 @@
     <p>Desarrollador Especialista en PLSQL</p>
     <!--<a href="#projects" class="btn">Ver Mis Proyectos</a> -->
   </div>
+  <div class="login-btn-container">
+    <button *ngIf="!isLoggedIn" routerLink="/login" class="login-btn">Login</button>
+    <button *ngIf="isLoggedIn" (click)="logout()" class="login-btn">Logout</button>
+  </div>
   </header>
   
   <head>
@@ -16,31 +20,22 @@
     <p>Soy una desarrolladora Frontend aprendiendo Angular y con experiencia en PLSQL. Me apasiona crear aplicaciones dinámicas e interactivas.</p>
   </section>
   
+
   <section id="skills" class="section-skills">
     <h2>Habilidades</h2>
-    <ul class="skills-list">
-      <li>
-        <img src="assets/icons/angular.png" alt="Angular Logo">
-        <p>Angular</p>
-      </li>
-      <li>
-        <img src="assets/icons/javascript.png" alt="JavaScript Logo">
-        <p>JavaScript</p>
-      </li>
-      <li>
-        <img src="assets/icons/html5.png" alt="HTML Logo">
-        <p>HTML5</p>
-      </li>
-      <li>
-        <img src="assets/icons/plsql.png" alt="pl Logo">
-        <p>PL/SQL</p>
-      </li>      
-      <li>
-        <img src="assets/icons/css3.png" alt="CSS Logo">
-        <p>CSS3</p>
-      </li>
-    </ul>
-  </section>
+    <div class="skills-list">
+      <div *ngFor="let habilidad of habilidades">
+        <img [src]="'assets/icons/' + habilidad.fichero" [alt]="habilidad.nombre + ' Logo'" class="skill-image">
+        <h2>{{ habilidad.nombre }}</h2>
+        <p>{{ habilidad.descripcion }}</p>
+        <p>Nivel: {{ habilidad.nivel }}</p>
+        <button *ngIf="isLoggedIn" [routerLink]="['/habilidades/edit', habilidad.id_habilidad]">Editar</button>
+        <button *ngIf="isLoggedIn" (click)="eliminarHabilidad(habilidad.id_habilidad)">Eliminar</button>
+      </div>
+    </div>
+    <button *ngIf="isLoggedIn" routerLink="habilidades/create">Crear</button>
+  </section>    
+  
   
   <section id="projects" class="section-projects">
     <h2>Proyectos</h2>

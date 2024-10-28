@@ -1,0 +1,45 @@
+/* Estilo general de la sección de login */
+.login-section {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+/* Asegura que el formulario no sea más ancho de lo necesario */
+.login-form {
+    max-width: 400px;  /* Limita el ancho del formulario */
+    margin: 0 auto;    /* Centra el formulario */
+    text-align: left;
+}
+
+/* Asegura que los inputs no se desborden */
+.form-group input {
+    width: 100%;       /* Asegura que los inputs tomen todo el ancho disponible en su contenedor */
+    max-width: 100%;   /* Evita que los inputs sean más anchos que su contenedor */
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #f39c12;
+}
+
+/* Botón de inicio de sesión */
+button[type="submit"] {
+    display: block;         
+    margin: 20px auto;
+    padding: 10px 30px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #d87e0d;
+}

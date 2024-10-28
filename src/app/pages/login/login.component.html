@@ -1,0 +1,14 @@
+<section class="login-section">
+    <h2>Iniciar Sesión</h2>
+    <form [formGroup]="formulario" (ngSubmit)="enviar()" class="login-form">
+      <div class="form-group">
+        <label>Usuario</label>
+        <input type="text" formControlName="username" placeholder="Ingrese su usuario">
+      </div>
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" formControlName="password" placeholder="Ingrese su contraseña">
+      </div>
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+</section>

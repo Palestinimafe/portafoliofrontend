@@ -10,7 +10,13 @@ import { PortafolioComponent } from './pages/portafolio/portafolio.component';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import { HabilidadesService } from './services/habilidades.service';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HabilidadesCreateEditComponent } from './pages/habilidades-create-edit/habilidades-create-edit.component';
+import { LoginComponent } from './pages/login/login.component';
+import { CommonModule } from '@angular/common';
+import { AuthInterceptor } from './services/auth.service';
 
 
 
@@ -22,14 +28,23 @@ import { FooterComponent } from './components/footer/footer.component';
     ErrorComponent,
     PortafolioComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HabilidadesCreateEditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule
     
   ],
-  providers: [],
+  providers: [HabilidadesService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
